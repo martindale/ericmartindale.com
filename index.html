@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Eric Martindale &middot; experimentalist</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/eric.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>Welcome<span class="robotic">, robot-like visitor</span>!</h1>
+            <h3><small>You've found the digital home of</small></h3>
+            <img src="img/martindale.jpg" class="rounded small inline" />
+            <h2>Eric Martindale</h2>
+            <h3 class="lowercase">I enjoy <em>building</em> <a href="#things">things</a>.</h3>
+            
+            <h3 style="margin-top: 1em; margin-bottom: -1em;"><small>Want to work <u>with</u> me?</small></h3>
+            <p><a href="mailto:eric@ericmartindale.com">eric@ericmartindale.com</a> &bull; <a href="https://twitter.com/martindale" rel="self">@martindale</a></p>
+            <h5><small>GPG: &nbsp; <code class="lowercase"><a href="https://www.ericmartindale.com/eric.asc">ericmartindale.com/eric.asc</a></code></small></h5>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+      function update() {
+        var timenow = new Date().getTime() / 1000;
+        //current time in seconds from the unix epoch start
+
+        var downtime= (6*60*60+20*60);
+        //6:20 of downtime on 3/12/2013
+        //converted to seconds
+        //source: http://vincesamios.com/bitcoins/accidental-hardfork-the-resilience-of-a-fledgling-bitcoin
+
+        var totaltime = timenow - 1230951265;
+        //where 1230951265 is the number of seconds since the unix epoch start at the time of the first block on Jan 3 2009 02:54:25 GMT
+
+        var uptime = 100*(totaltime-downtime)/totaltime;
+        var printme = uptime.toFixed(11).toString().concat(" %");
+
+        document.querySelector('*[data-bind="bitcoinDowntime"]').innerHTML = printme;
+      }
+
+      update();
+
+      setInterval(update, 200);
+    </script>
+  </body>
+</html>
