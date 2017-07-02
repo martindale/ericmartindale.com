@@ -267,6 +267,13 @@ body {
   padding: 0;
 }
 
+/*************************************
+ * CUSTOM
+ ***************************************/
+.reveal .controls {
+  display: none !important;
+}
+ 
 .reveal section .lowercase {
   text-transform: lowercase;
 }
