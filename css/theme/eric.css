@@ -273,6 +273,21 @@ body {
 .reveal .controls {
   display: none !important;
 }
+
+.reveal section .narrow {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal section .enlarged {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.reveal section .normalcase {
+  text-transform: none !important;
+}
  
 .reveal section .lowercase {
   text-transform: lowercase;

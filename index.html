@@ -36,20 +36,49 @@
       <div class="slides">
         <section>
           <section>
-            <h1 style="margin-top: -1em;">Welcome<span class="robotic">, robot-like visitor</span>!</h1>
+            <h1>Welcome<span class="robotic">, robot-like visitor</span>!</h1>
             <h3><small>You've found the digital home of</small></h3>
             <img src="img/martindale.jpg" class="rounded small inline" />
             <h2>Eric Martindale</h2>
-            <h3 class="lowercase">I enjoy <em>building</em> <a href="#things">things</a>.</h3>
+            <h3 class="normalcase">I enjoy building <a href="#projects" class="navigate-next">things</a>.</h3>
+          </section>
+
+          <section id="fabric" data-bind="/activity" src="/people/martindale">
+            <h3 class="lowercase">Right now, I'm working on</h3>
+            <h2><a href="https://fabric.fm">Fabric</a></h2>
+            <p>an experimental peer-to-peer information market</p>
+          </section>
+          
+          <section id="projects">
+            <h2>Projects</h2>
+            <div class="narrow">
+              <p>These are some of <a href="https://github.com/martindale?utf8=%E2%9C%93&tab=repositories&type=source">my open-source projects</a>.</p>
+              <ul>
+                <li data-transition="fade" data-transition-speed><a href="https://maki.io">Maki</a>, a cross-platform application framework</li>
+                <li data-transition="fade" data-transition-speed><a href="https://soundtrack.io">soundtrack</a>, a collaborative digital jukebox</li>
+                <li data-transition="fade" data-transition-speed><a href="https://www.roleplaygateway.com/">RPG</a>, a collaborative storytelling engine</li>
+              </ul>
+              <p class="fragment"><strong>Remember:</strong> if you don't control the software,<br /><span class="fragment enlarged"> the software controls you!</span></p>
             
-            <h3 style="margin-top: 1em; margin-bottom: -1em;"><small>Want to work with me?</small></h3>
-            <p><a href="mailto:eric@ericmartindale.com">eric@ericmartindale.com</a> &bull; <a href="https://twitter.com/martindale" rel="self">@martindale</a></p>
+              <h3><a href="https://codecombat.com/play">Learn to code &raquo;</a></h3>
+            </div>
+          </section>
+          
+          <!-- <section id="background">
+            <h2>Background</h2>
+            <p>I build things, <a href="https://linkedin.com/in/martindale" rel="me">sometimes companies</a>.</p>
+            
+            <p></p>
+          </section> -->
+          
+          <section id="contact">
+            <h2>Thank you! <a href="https://gittip.com/martindale"><i class="heart icon"></i></a></h2>
+            <p>I build things, <a href="https://linkedin.com/in/martindale" rel="me">sometimes companies</a>.</p>
+            <h3><small>Want to work with me?</small></h3>
+            <p><a href="https://twitter.com/martindale" rel="self">@martindale</a> &bull; <a href="mailto:eric@ericmartindale.com">eric@ericmartindale.com</a></p>
             <!-- <h5><small>GPG: &nbsp; <code class="lowercase"><a href="https://www.ericmartindale.com/eric.asc">ericmartindale.com/eric.asc</a></code></small></h5> -->
           </section>
-        </section>
-        <section>
-          
-        </section>
+        </section
       </div>
     </div>
 
@@ -60,7 +89,8 @@
       // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
         //history: true,
-
+	      mouseWheel: true,
+        slideNumber: 'c/t',
         // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
